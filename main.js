@@ -3,6 +3,13 @@ function parseTvSchedule() {
   let programs = tvScheduleInput.split(/\s(?=\d+\.\d+)/);
   let programObjects = programs.map((program) => {
     let [start, title] = program.split(/ (.+)/);
+    title = title.replace(/ - /g, " – ");
+    if (/:\s[a-zA-Z]/.test(title)) {
+      title = title.replace(
+        /:\s(\w)/,
+        (_, letter) => `: ${letter.toUpperCase()}`
+      );
+    }
     return { start, title };
   });
 
