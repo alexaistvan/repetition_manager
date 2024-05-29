@@ -13,7 +13,10 @@
         id="tvScheduleInput"
         placeholder="Másold be a szövegedet"
       ></textarea>
-      <button onclick="parseTvSchedule()">Feldolgozás</button>
+      <div class="buttons">
+        <button onclick="parseTvSchedule()">Feldolgozás</button>
+        <button id="btnRefresh" type="button">Reset</button>
+      </div>
       <h3>verzió1:</h3>
       <div id="longerOutput"></div>
       <h3>verzió2:</h3>
